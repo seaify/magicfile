@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["sea"]
   s.email       = "dil"
   s.files       = Dir["lib/magicfile.rb"]
-  s.homepage    = "homepage_for_replace"
+  s.homepage    = "https://github.com/seaify/magicfile"
   s.license     = "MIT"
 
   s.executables << 'magicfile'
