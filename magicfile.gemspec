@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "magicfile"
-  s.version     = "0.0.2"
+  s.version     = "0.0.3"
   s.date        = "2015-08-23"
   s.summary     = "used to create file, modify file, read file information"
   s.description = "used to create file, modify file, read file information"

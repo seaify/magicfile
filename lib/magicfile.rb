@@ -48,7 +48,6 @@ class Magicfile
   def append_string_lines(line_contents)
     space_num = @current_line_space_num + 2
     content = line_contents.join("\n" + " " * space_num)
-    ap content
     line = MagicLine.new(content, space_num)
     @lines.insert(@current_line_index + 1, line)
   end
@@ -65,30 +64,11 @@ class Magicfile
       @current_line_index += 1
     end
 
-    ap "after start======"
-    ap @lines
-    ap @current_line_index
-    ap @current_line_space_num
-    ap "end======"
-
   end
 
   def to_file(name)
     infos = @lines.map { |line| " " * line.instance_variable_get("@space_num") + line.instance_variable_get("@content") }
-    ap infos.join("\n")
     File.open(name, 'w') { |file| file.write(infos.join("\n")) }
   end
 
-  def display
-    @lines.each do |line|
-      ap ' ' * line.instance_variable_get("@space_num") + line.instance_variable_get("@content")
-    end
-  end
-
 end
-
-a = Magicfile.new
-a.append_modules(['api', 'v1', 'entities'])
-a.append_class('screen', 'Grape::Entity')
-a.append_string_lines(['expose :id', 'expose :name'])
-a.to_file('tmp.txt')
